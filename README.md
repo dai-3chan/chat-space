@@ -42,3 +42,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false, unique: true|
+
+### Assosiation
+- has_many :massege
