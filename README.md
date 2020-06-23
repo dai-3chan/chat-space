@@ -10,12 +10,12 @@
 - bolongs_to :user
 
 
-## messageテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false, foreign_key: true|
-|image|string|foreign_key: true|
+|body|text|null: false|
+|image|string|
 |group_id|integer|null: false, foreign_key: ture|
 |user_id|integer|null: false, foreign_key: ture|
 
@@ -24,24 +24,23 @@
 - belongs_to :user
 
 
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false, unique: true|
-|message_id|foreign_key: ture|
 
-### Assosiation
-- has_many :massage
+### Association
+- has_many :messages
+- has_many :groups
+- belongs_to :groups_users
 
 
-## groupテーブル
+## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|name|string|null: false, unique: true| 
 
-### Assosiation
-- has_many :massege
+### Association
+- has_many :messages
