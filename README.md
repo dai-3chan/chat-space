@@ -14,7 +14,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |group_id|integer|null: false, foreign_key: ture|
 |user_id|integer|null: false, foreign_key: ture|
@@ -32,8 +32,8 @@
 
 ### Association
 - has_many :messages
-- has_many :groups
-- belongs_to :groups_users
+- has_many :groups, through: :groups_users
+- has_many :groups_users
 
 
 ## groupsテーブル
@@ -43,4 +43,5 @@
 |name|string|null: false, unique: true| 
 
 ### Association
-- has_many :messages
+- has_many :messages, throgh: :gruops_users
+- has_many :groups_users
