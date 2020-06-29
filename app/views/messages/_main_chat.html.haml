@@ -1,0 +1,22 @@
+.main
+  .main__top
+    .main__top__headerLeft
+      .left1 test
+      .left2 member : masa
+    .HeaderRight 
+      = link_to "#", class: "box" do
+        Edit
+  .main__center
+    .Chat
+      .user masa
+      .date 2020/06/28(Sun) 02:22:22
+    .message 夜勤だよ！
+  .form
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", value: "send", class: "submit-btn"}
+          
