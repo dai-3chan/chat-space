@@ -1,13 +1,14 @@
 .side
   .side__header
     .side__header__box
-      %p.UserName masa
+      %p.UserName 
+        = current_user.name
       .side__header__box__Menu
         = link_to "#", class: "btn" do
           = icon('fas', 'edit',  class: "icon-edit")
           %span<>
-        = link_to "#", class: "btn" do
-          = icon('fas', 'cog',  class: "icon-cog")
+        = link_to edit_user_path(current_user) do 
+          = icon('fas', 'cog',  class: "icon-cog", class: "btn")
   .groups
     .groups__name techcamp
     .groups__message まだメッセージがありません
