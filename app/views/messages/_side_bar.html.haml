@@ -4,11 +4,16 @@
       %p.UserName 
         = current_user.name
       .side__header__box__Menu
-        = link_to "#", class: "btn" do
+        = link_to new_group_path, {class: "btn"} do
           = icon('fas', 'edit',  class: "icon-edit")
           %span<>
-        = link_to edit_user_path(current_user) do 
-          = icon('fas', 'cog',  class: "icon-cog", class: "btn")
-  .groups
-    .groups__name techcamp
-    .groups__message まだメッセージがありません
+        = link_to edit_user_path(current_user), {class: "btn"} do 
+          = icon('fas', 'cog',  class: "icon-cog")
+  .group
+    - current_user.groups.each do |groups|
+      .groups
+        = link_to '#' do
+          .groups__name 
+            = groups.name
+          .groups__message 
+            まだメッセージがありません
