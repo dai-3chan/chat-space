@@ -56,6 +56,7 @@
       height:calc(100vh - 100px - 90px);
       background-color: #fafafa;
       padding-left: 40px;
+      overflow: scroll;
 
       .Chat {
         margin: 35px 0 12px 0;
@@ -167,21 +168,25 @@
         }
       }
     }
-    .groups {
 
-      &__name {
-        font-size: 15px;
-        color: #ffffff;
-        font-weight: bold;
-        margin: 20px 20px 5px 20px;
-        height: calc(100vh - 100px);
-      }
+    .GroupList {
+          height: calc(100vh - 100px);
+          overflow: scroll;
+      .groups {
+        .groups__name {
+          font-size: 15px;
+          color: #ffffff;
+          font-weight: bold;
+          margin: 20px 20px 5px 20px;
+          // height: calc(100vh - 100px);
+        }
 
-      &__message {
-        font-size: 11px;
-        color: #ffffff;
-        font-weight: bold;
-        margin: 0 20px 40px 20px;
+        .groups__message {
+          font-size: 11px;
+          color: #ffffff;
+          font-weight: bold;
+          margin: 0 20px 40px 20px;
+        }
       }
     }
   }
